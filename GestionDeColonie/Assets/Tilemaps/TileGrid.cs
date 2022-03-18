@@ -18,12 +18,14 @@ namespace Assets.Tilemaps
         public GameObject utility;
 
         [Serializable]
-        class GroundTiles
+        public class GroundTiles
         {
             public GroundTileType TileType;
             public Texture2D Texture;
             public Color Color;
-            public Tile Tile;
+            public Tile Tile1;
+            public Tile Tile2;
+            public Tile Tile3;
         }
 
         [Serializable]
@@ -36,7 +38,7 @@ namespace Assets.Tilemaps
         }
 
         [SerializeField]
-        private GroundTiles[] GroundTileTypes;
+        public GroundTiles[] GroundTileTypes;
         [SerializeField]
         private ObjectTiles[] ObjectTileTypes;
 
@@ -91,9 +93,9 @@ namespace Assets.Tilemaps
                 if (tiletype.TileType == 0) continue;
 
                 // If we have a custom tile, use it otherwise create a new tile
-                var tile = tiletype.Tile == null ?
+                var tile = tiletype.Tile1 == null ?
                     CreateTile(tiletype.Color, tiletype.Texture) :
-                    tiletype.Tile;
+                    tiletype.Tile1;
 
                 dictionary.Add((int)tiletype.TileType, tile);
             }

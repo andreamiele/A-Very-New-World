@@ -1,13 +1,33 @@
 ﻿<Properties StartupConfiguration="{DED1321B-2C15-EEF6-4A8C-8EC5AD5AC1C8}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager/BuildManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameManager/Testingscripts.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameManager/BuildManager.cs" Line="20" Column="1" />
+      <File FileName="Assets/Scripts/GameManager/BuildManager.cs" Line="75" Column="5" />
+      <File FileName="Assets/Tilemaps/TileGrid.cs" Line="31" Column="23" />
+      <File FileName="Assets/Tilemaps/TilemapStructure.cs" Line="99" Column="1" />
+      <File FileName="Assets/Scripts/GameManager/GameManager.cs" Line="36" Column="73" />
+      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Player.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/GameManager/testingscripts.cs" Line="6" Column="22" />
+      <File FileName="Assets/Timer.cs" Line="18" Column="6" />
+      <File FileName="Assets/Scripts/GameManager/MenuManager.cs" Line="21" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="GestionDeColonie" expanded="True">
-            <Node name="Assets" expanded="True" />
+            <Node name="Assets" expanded="True">
+              <Node name="ScriptableObjects" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Collidable" expanded="True">
+                  <Node name="Entities" expanded="True">
+                    <Node name="Mover" expanded="True" />
+                  </Node>
+                </Node>
+                <Node name="GameManager" expanded="True">
+                  <Node name="Testingscripts.cs" selected="True" />
+                </Node>
+              </Node>
+              <Node name="Tilemaps" expanded="True" />
+            </Node>
           </Node>
         </State>
       </Pad>
@@ -15,7 +35,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="c3110d88-9abb-4635-8c8f-793b10a5a277" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="59f08a91-c8b0-4ea3-9066-3d3f32bfccf2" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

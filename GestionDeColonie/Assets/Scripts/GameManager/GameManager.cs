@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject woodText;
+    public GameObject cobbleText;
+    public GameObject ironText;
     public static GameManager instance;
 
     private void Start()
@@ -23,6 +27,13 @@ public class GameManager : MonoBehaviour
         instance = this;
         SceneManager.sceneLoaded += LoadState;
         DontDestroyOnLoad(gameObject);
+    }
+
+    private void Update()
+    {
+        woodText.GetComponent<TextMeshProUGUI>(). text = wood.ToString();
+        cobbleText.GetComponent<TextMeshProUGUI>().text = cobble.ToString();
+        ironText.GetComponent<TextMeshProUGUI>().text = iron.ToString();
     }
 
     public Tilemap collision;

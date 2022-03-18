@@ -35,6 +35,8 @@ namespace Assets.Tilemaps
         public Tilemap obj;
         public Tile arbreTile;
 
+        public Tilemap waterMap;
+
         public Tile rockTile;
         /// <summary>
         /// Method to initialize our tilemap.
@@ -94,13 +96,13 @@ namespace Assets.Tilemaps
                         tilesArray[x * Width + y] = null;
                         continue;
                     }
-                    
+
                     tilesArray[x * Width + y] = tile;
                 }
             }
             var tilesArray2 = new Tile[Width * Height];
             var tilesArray3 = new Tile[Width * Height];
-            
+            var tilesArrayWater = new Tile[Width * Height];
 
             for (int i =0;i< Width * Height;i++)
             {
@@ -129,17 +131,21 @@ namespace Assets.Tilemaps
                 }
                 else
                 {
+                    tilesArrayWater[i] = tilesArray[i];
+
                     tilesArray[i] = null;
                     
                     tilesArray2[i] = collisionTile;
                 }
             }
             obj.SetTiles(positionsArray, tilesArray3);
+            waterMap.SetTiles(positionsArray, tilesArrayWater);
             coll.SetTiles(positionsArray, tilesArray2);
             _graphicMap.SetTiles(positionsArray, tilesArray);
             obj.RefreshAllTiles();
             coll.RefreshAllTiles();
             _graphicMap.RefreshAllTiles();
+            waterMap.RefreshAllTiles();
         }
 
         public List<KeyValuePair<Vector2Int, int>> GetNeighbors(int tileX, int tileY)
