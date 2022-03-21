@@ -17,6 +17,7 @@ namespace Assets.Tilemaps
         public GameObject Prefab;
         public GameObject utility;
 
+
         [Serializable]
         public class GroundTiles
         {
@@ -69,13 +70,14 @@ namespace Assets.Tilemaps
             }
             surface.BuildNavMesh();
 
-            Instantiate(Prefab, new Vector3(15, 15, 0), Quaternion.identity);
+            GameObject x = Instantiate(Prefab, new Vector3(15, 15, 0), Quaternion.identity);
+            
             if (GameObject.Find("Player2"))
             {
                 Debug.Log("Exists");
             }
             else Debug.Log("Doesn't exist");
-            Instantiate(utility, new Vector3(15, 15, 0), Quaternion.identity);
+            //Instantiate(utility, new Vector3(15, 15, 0), Quaternion.identity);
 
         }
 

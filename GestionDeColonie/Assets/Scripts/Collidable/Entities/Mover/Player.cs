@@ -2,17 +2,30 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.EventSystems;
 
 public class Player : Mover
 {
-    public bool hhh = true;
+    // ... ------------------------------------------
+    public string playerName;
+
+    public bool onMouseOver = true;
     public LayerMask whatCanBeClickedOn;
-    public string nameu;
     private NavMeshAgent myAgent;
     public Animator animator;
+
+
+    public bool active;
+
+    float speed = 1f;
+    Vector2 lastClickedPos;
+    bool moving;
     //public GameObject Stats;
-    public GameObject tile;
-    
+
+
+
+
+    // Start and Update functions ------------------------------------------
 
     protected override void Start()
     {
@@ -24,25 +37,9 @@ public class Player : Mover
         //Stats.GetComponent<Rigidbody2D>().freezeRotation = true;
     }
 
-    private void FixedUpdate()
+    protected override void Update()
     {
-        
-    }
-    public bool active;
-    protected void OnMouseDown()
-    {
-        if (!active)
-            active = true;
-        else
-            active = false;
-    }
-    float speed = 1f;
-    Vector2 lastClickedPos;
-    bool moving;
-
-    private void Update()
-    {
-        
+        base.Update();
         myAgent = GetComponent<NavMeshAgent>();
         myAgent.updateRotation = false;
         myAgent.updateUpAxis = false;
@@ -53,20 +50,15 @@ public class Player : Mover
         if (active)
         {
             animator.SetFloat("H", myAgent.velocity.x);
-            if(myAgent.velocity.x>= 0.01f)
-            {
-                tile.transform.localScale = new Vector3(1f, 1f, 1f);
-            }
-            else if (myAgent.velocity.x <= -0.01f)
-            {
-                tile.transform.localScale = new Vector3(-1f, 1f, 1f);
-                
-            }
+            
             if (Input.GetMouseButtonDown(0))
             {
-                lastClickedPos = GetWorldPositionOnPlane(Input.mousePosition, 0);
-                //lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                moving = true;
+                if (!EventSystem.current.IsPointerOverGameObject())
+                {
+                    lastClickedPos = GetWorldPositionOnPlane(Input.mousePosition, 0);
+                    //lastClickedPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    moving = true;
+                }
             }
             if (moving && (Vector2) transform.position != lastClickedPos)
             {
@@ -91,17 +83,25 @@ public class Player : Mover
         return ray.GetPoint(distance);
     }
 
-
-    private void OnMouseOver()
+    // Hover effect on colons. ------------------------------------------
+    private void OnMouseOver() 
     {
         //Stats.SetActive(true);
-
-        hhh = false;
+        onMouseOver = false;
     }
 
     private void OnMouseExit()
     {
         //Stats.SetActive(false);
-        hhh = true;
+        onMouseOver = true;
+    }
+
+
+    // On click effects on colons ------------------------------------------
+    protected void OnMouseDown()
+    {
+        GameManager.instance.GUIPlayer.SetActive(true);
+        GameManager.instance.justClickedPlayer = this;
+
     }
 }

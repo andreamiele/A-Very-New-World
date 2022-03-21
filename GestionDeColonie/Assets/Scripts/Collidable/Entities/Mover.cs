@@ -18,7 +18,13 @@ public abstract class Mover : Entity
         BoxCollider = GetComponent<BoxCollider2D>();
     }
     
-
+    protected virtual void Update()
+    {
+        if (health <= 0)
+        {
+            Die();
+        }
+    }
 
     protected virtual void UpdateMotor(Vector3 input)
     {
@@ -45,5 +51,10 @@ public abstract class Mover : Entity
         {
             transform.Translate(moveDelta.x * Time.deltaTime, 0, 0);
         }
+    }
+
+    protected virtual void Die()
+    {
+        Destroy(gameObject);
     }
 }

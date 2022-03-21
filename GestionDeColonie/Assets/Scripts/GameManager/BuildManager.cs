@@ -46,7 +46,7 @@ public class BuildManager : MonoBehaviour
 
     private void Update()
     {
-        surface.BuildNavMesh();
+        //surface.BuildNavMesh();
         if (active)
         {
             if (Input.GetMouseButtonDown(0))
@@ -55,9 +55,11 @@ public class BuildManager : MonoBehaviour
                 Vector3 pos = GetWorldPositionOnPlane(Input.mousePosition, 0);
                 tilemapBuildable.SetTile(tilemapBuildable.WorldToCell(pos), tilesBuild[0]);
                 tilemapCollision.SetTile(tilemapCollision.WorldToCell(pos), tilesCollision[0]);
+                tilemapBuildable.RefreshAllTiles();
+                tilemapCollision.RefreshAllTiles();
                 Debug.Log("fdsfds");
                 active = false;
-                surface.BuildNavMesh();
+
 
             }
 
@@ -67,7 +69,7 @@ public class BuildManager : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                surface.BuildNavMesh();
+
             }
         }
     }

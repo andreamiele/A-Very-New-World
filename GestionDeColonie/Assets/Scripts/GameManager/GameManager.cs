@@ -4,13 +4,30 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.Tilemaps;
 using TMPro;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+    public int mobCount;
     public GameObject woodText;
     public GameObject cobbleText;
     public GameObject ironText;
     public static GameManager instance;
+    public GameObject GUIPlayer;
+
+    public static GameManager Instance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                Debug.LogError("Game Manager is null");
+            }
+            return instance;
+        }
+
+    }
 
     private void Start()
     {
@@ -31,9 +48,15 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        experienceSlider.value = experience;
+        experienceSlider.maxValue = maxExperience;
         woodText.GetComponent<TextMeshProUGUI>(). text = wood.ToString();
         cobbleText.GetComponent<TextMeshProUGUI>().text = cobble.ToString();
         ironText.GetComponent<TextMeshProUGUI>().text = iron.ToString();
+
+        GameObject[] gameObjectList = GameObject.FindGameObjectsWithTag("player");
+        settlers = TabToList(gameObjectList);
+
     }
 
     public Tilemap collision;
@@ -52,7 +75,10 @@ public class GameManager : MonoBehaviour
     public Player player;
     public FloatingTextManager floatingTextManager;
 
-    public List<Player> settlers;
+    public List<GameObject> settlers= new List<GameObject>();
+    public Player justClickedPlayer;
+    public List<Player> mobilisedSettlers = new List<Player>();
+
     ////
     ///
 
@@ -61,7 +87,9 @@ public class GameManager : MonoBehaviour
     public int cobble;
     public int iron;
     /// etc..
-    public int experience;
+    private int experience=5;
+    public Slider experienceSlider;
+    private int maxExperience = 50;
 
 
     // Logic max level
@@ -71,6 +99,17 @@ public class GameManager : MonoBehaviour
     public int mobCap;
 
     public List<GameObject> mobs = new List<GameObject>();
+
+
+    private List<GameObject> TabToList(GameObject[] tab)
+    {
+        List<GameObject> list = new List<GameObject>();
+        for (int i = 0; i<tab.Length; i++)
+        {
+            list.Add(tab[i]);
+        }
+        return list;
+    }
 
     // Floating text
     public void ShowText(string msg, int fontSize, Color color, Vector3 position, Vector3 motion, float duration)
@@ -104,7 +143,7 @@ public class GameManager : MonoBehaviour
 
     public void spawn()
     {
-        if (mobs.Count < mobCap)
+        if (mobCount < mobCap)
         {
             Vector3Int sizes = collision.size;
             float x = Random.Range(1f, sizes.x - 1);
@@ -132,6 +171,8 @@ public class GameManager : MonoBehaviour
             float a =  x   * 0.16f;
             float b = y * 0.16f;
             Instantiate(mobs[0], new Vector3(a, b, 0), Quaternion.identity);
+            Instantiate(mobs[1], new Vector3(a, b, 0), Quaternion.identity);
+            mobCount++;
         }
     }
 }

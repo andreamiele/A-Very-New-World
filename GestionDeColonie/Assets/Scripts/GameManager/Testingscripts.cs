@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Tilemaps;
 using UnityEngine.AI;
-
+using UnityEngine.EventSystems;
 public class Testingscripts : MonoBehaviour
 {
     // Var
@@ -18,22 +18,25 @@ public class Testingscripts : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Input.mousePosition;
-            Vector3 pos = GetWorldPositionOnPlane(mousePos, 0);
-            Vector3Int pos2= tilemapObject.LocalToCell(pos);
-            TileBase t = tilemapObject.GetTile(pos2);
-
-            // Timer creator (cf. Timer class)
-            Timer.Create(DeleteTile, 5f, pos2,tilemapObject); 
-            Timer.Create(DeleteTile, 5f, pos2, tilemapCollision);
-
-            if (t.name == "arbre3")
+            if (!EventSystem.current.IsPointerOverGameObject())
             {
-                gameManager.wood += 2;
-            }
-            else
-            {
-                gameManager.cobble += 1;
+                Vector3 mousePos = Input.mousePosition;
+                Vector3 pos = GetWorldPositionOnPlane(mousePos, 0);
+                Vector3Int pos2 = tilemapObject.LocalToCell(pos);
+                TileBase t = tilemapObject.GetTile(pos2);
+
+                // Timer creator (cf. Timer class)
+                Timer.Create(DeleteTile, 5f, pos2, tilemapObject);
+                Timer.Create(DeleteTile, 5f, pos2, tilemapCollision);
+
+                if (t.name == "arbre3")
+                {
+                    gameManager.wood += 2;
+                }
+                else
+                {
+                    gameManager.cobble += 1;
+                }
             }
             
         }
