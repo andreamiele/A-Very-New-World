@@ -145,6 +145,8 @@
     <Compile Include="Assets/Scripts/Collidable/Collectable/Damage.cs" />
     <Compile Include="Assets/Scripts/Collidable/Collectable/EnemyHitbox.cs" />
     <Compile Include="Assets/Scripts/Collidable/Entities/Mover/PlayerActiver.cs" />
+    <Compile Include="Assets/Scripts/GameManager/VariableTile.cs" />
+    <Compile Include="Assets/Scripts/GameManager/CountingTile.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

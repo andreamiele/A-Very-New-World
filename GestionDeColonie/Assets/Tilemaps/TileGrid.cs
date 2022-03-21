@@ -17,7 +17,6 @@ namespace Assets.Tilemaps
         public GameObject Prefab;
         public GameObject utility;
 
-
         [Serializable]
         public class GroundTiles
         {
@@ -40,6 +39,15 @@ namespace Assets.Tilemaps
 
         [SerializeField]
         public GroundTiles[] GroundTileTypes;
+
+
+        public List<Tile> waterTiles;
+        public List<Tile> sandTiles;
+        public List<Tile> grassTiles;
+        public List<Tile> dirtTiles;
+        public List<Tile> rockTiles;
+        public List<Tile> snowTiles;
+
         [SerializeField]
         private ObjectTiles[] ObjectTileTypes;
 

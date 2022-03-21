@@ -7152,6 +7152,29 @@ MonoBehaviour:
     Tile1: {fileID: 11400000, guid: a8a169a78782d4aeab2b9a36dc4338b2, type: 2}
     Tile2: {fileID: 11400000, guid: a8a169a78782d4aeab2b9a36dc4338b2, type: 2}
     Tile3: {fileID: 11400000, guid: a8a169a78782d4aeab2b9a36dc4338b2, type: 2}
+  waterTiles:
+  - {fileID: 0}
+  sandTiles: []
+  grassTiles:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 28e5c25aec822465c86d964254650163, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: f37a69b805f5042e5942b2010ac19319, type: 2}
+  - {fileID: 11400000, guid: a4b81cd893742476e86bea837b5e3d82, type: 2}
+  - {fileID: 0}
+  - {fileID: 11400000, guid: 088383650b4604c388960c98ffa1f022, type: 2}
+  - {fileID: 11400000, guid: ff2f2cd0d5333438cb6da4b93a8611ec, type: 2}
+  - {fileID: 11400000, guid: 11a2d73fbf45e400ebcd7add9cce5067, type: 2}
+  - {fileID: 11400000, guid: 15322d34cb65f4232b8693b1c8a4c136, type: 2}
+  - {fileID: 11400000, guid: 5a973f7433a9a45b5a0b2ba30a95272a, type: 2}
+  - {fileID: 11400000, guid: d8319f0ae7aef480cab82e509df2153d, type: 2}
+  dirtTiles: []
+  rockTiles: []
+  snowTiles: []
   ObjectTileTypes:
   - TileType: 2001
     Texture: {fileID: 2800000, guid: d546437f2cb00a949bcc5000092f290a, type: 3}

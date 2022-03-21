@@ -1,53 +1,36 @@
 ﻿<Properties StartupConfiguration="{DED1321B-2C15-EEF6-4A8C-8EC5AD5AC1C8}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Collidable/Entities/Mover.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Tilemaps/TileGrid.cs">
     <Files>
       <File FileName="Assets/Scripts/GameManager/GameManager.cs" Line="90" Column="30" IsPinned="True" />
-      <File FileName="Assets/Tilemaps/TilemapStructure.cs" Line="99" Column="1" IsPinned="True" />
-      <File FileName="Assets/Tilemaps/TileGrid.cs" Line="75" Column="44" IsPinned="True" />
-      <File FileName="Assets/Scripts/GameManager/BuildManager.cs" Line="72" Column="1" />
-      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Player.cs" Line="13" Column="41" />
-      <File FileName="Assets/Scripts/GameManager/testingscripts.cs" Line="48" Column="6" />
-      <File FileName="Assets/Timer.cs" Line="18" Column="6" />
-      <File FileName="Assets/Scripts/Collidable/Collectable/Weapon.cs" Line="33" Column="14" />
-      <File FileName="Assets/Scripts/Collidable/Collectable/Damage.cs" Line="5" Column="21" />
-      <File FileName="Assets/Scripts/Collidable/Entity.cs" Line="17" Column="1" />
-      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Erratic/Enemy.cs" Line="73" Column="10" />
-      <File FileName="Assets/Scripts/Collidable/Collectable/EnemyHitbox.cs" Line="10" Column="2" />
-      <File FileName="Assets/Scripts/Collidable/Entities/Mover/PlayerActiver.cs" Line="14" Column="1" />
-      <File FileName="Assets/test.cs" Line="29" Column="6" />
-      <File FileName="Assets/Scripts/Collidable/Entities/Mover.cs" Line="14" Column="1" />
+      <File FileName="Assets/Tilemaps/TilemapStructure.cs" IsPinned="True" />
+      <File FileName="Assets/Tilemaps/TileGrid.cs" Line="43" Column="1" IsPinned="True" />
+      <File FileName="Assets/Scripts/GameManager/BuildManager.cs" />
+      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Player.cs" />
+      <File FileName="Assets/Scripts/GameManager/testingscripts.cs" />
+      <File FileName="Assets/Timer.cs" />
+      <File FileName="Assets/Scripts/Collidable/Collectable/Weapon.cs" />
+      <File FileName="Assets/Scripts/Collidable/Collectable/Damage.cs" />
+      <File FileName="Assets/Scripts/Collidable/Entity.cs" />
+      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Erratic/Enemy.cs" />
+      <File FileName="Assets/Scripts/Collidable/Collectable/EnemyHitbox.cs" />
+      <File FileName="Assets/Scripts/Collidable/Entities/Mover/PlayerActiver.cs" />
+      <File FileName="Assets/test.cs" />
+      <File FileName="Assets/Scripts/Collidable/Entities/Mover.cs" />
+      <File FileName="Assets/Scripts/GameManager/VariableTile.cs" />
+      <File FileName="Assets/Scripts/GameManager/CountingTile.cs" />
+      <File FileName="Assets/Scripts/Collidable.cs" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="GestionDeColonie" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="ScriptableObjects" expanded="True" />
-              <Node name="Scripts" expanded="True">
-                <Node name="Collidable" expanded="True">
-                  <Node name="Entities" expanded="True">
-                    <Node name="Mover" expanded="True">
-                      <Node name="Erratic" expanded="True" />
-                    </Node>
-                    <Node name="Mover.cs" selected="True" />
-                  </Node>
-                </Node>
-                <Node name="Display" expanded="True">
-                  <Node name="Interaction" expanded="True" />
-                  <Node name="Menus" expanded="True" />
-                </Node>
-                <Node name="GameManager" expanded="True" />
-              </Node>
-              <Node name="Tilemaps" expanded="True" />
-            </Node>
-          </Node>
+          <Node name="GestionDeColonie" expanded="True" />
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="59f08a91-c8b0-4ea3-9066-3d3f32bfccf2" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="af66cd70-92a5-4b1d-abc7-1dce75d56a86" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
