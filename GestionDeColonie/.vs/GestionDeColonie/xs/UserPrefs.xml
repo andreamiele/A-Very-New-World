@@ -1,36 +1,48 @@
 ﻿<Properties StartupConfiguration="{DED1321B-2C15-EEF6-4A8C-8EC5AD5AC1C8}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Tilemaps/TileGrid.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Tilemaps/TilemapStructure.cs">
     <Files>
-      <File FileName="Assets/Scripts/GameManager/GameManager.cs" Line="90" Column="30" IsPinned="True" />
-      <File FileName="Assets/Tilemaps/TilemapStructure.cs" IsPinned="True" />
-      <File FileName="Assets/Tilemaps/TileGrid.cs" Line="43" Column="1" IsPinned="True" />
-      <File FileName="Assets/Scripts/GameManager/BuildManager.cs" />
-      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Player.cs" />
-      <File FileName="Assets/Scripts/GameManager/testingscripts.cs" />
-      <File FileName="Assets/Timer.cs" />
-      <File FileName="Assets/Scripts/Collidable/Collectable/Weapon.cs" />
-      <File FileName="Assets/Scripts/Collidable/Collectable/Damage.cs" />
+      <File FileName="Assets/Scripts/GameManager/GameManager.cs" Line="195" Column="1" IsPinned="True" />
+      <File FileName="Assets/ScriptableObjects/CellularAutomata.cs" IsPinned="True" />
       <File FileName="Assets/Scripts/Collidable/Entity.cs" />
-      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Erratic/Enemy.cs" />
-      <File FileName="Assets/Scripts/Collidable/Collectable/EnemyHitbox.cs" />
-      <File FileName="Assets/Scripts/Collidable/Entities/Mover/PlayerActiver.cs" />
-      <File FileName="Assets/test.cs" />
       <File FileName="Assets/Scripts/Collidable/Entities/Mover.cs" />
-      <File FileName="Assets/Scripts/GameManager/VariableTile.cs" />
-      <File FileName="Assets/Scripts/GameManager/CountingTile.cs" />
-      <File FileName="Assets/Scripts/Collidable.cs" />
+      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Erratic.cs" />
+      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Erratic/Enemy.cs" />
+      <File FileName="Assets/Scripts/Collidable/Entities/Mover/Player.cs" Line="24" Column="71" />
+      <File FileName="Assets/Tilemaps/TilemapStructure.cs" Line="82" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="GestionDeColonie" expanded="True" />
+          <Node name="GestionDeColonie" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Helpers" expanded="True" />
+              <Node name="ScriptableObjects" expanded="True" />
+              <Node name="Scripts" expanded="True">
+                <Node name="Collidable" expanded="True">
+                  <Node name="Collectable" expanded="True">
+                    <Node name="Structure" expanded="True" />
+                  </Node>
+                  <Node name="Entities" expanded="True">
+                    <Node name="Mover" expanded="True">
+                      <Node name="Erratic" expanded="True" />
+                    </Node>
+                    <Node name="Static" expanded="True" />
+                  </Node>
+                </Node>
+                <Node name="GameManager" expanded="True" />
+              </Node>
+              <Node name="Tilemaps" expanded="True">
+                <Node name="TilemapStructure.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="af66cd70-92a5-4b1d-abc7-1dce75d56a86" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="4877818c-b472-420a-b872-b3f22be43c7c" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

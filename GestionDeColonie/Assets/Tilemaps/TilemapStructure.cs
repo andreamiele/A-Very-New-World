@@ -24,17 +24,22 @@ namespace Assets.Tilemaps
 
         private int[] _tiles;
         private Tilemap _graphicMap;
-        
+
         [HideInInspector]
         public TileGrid Grid;
 
         [SerializeField]
         private AlgorithmBase[] _algorithms;
 
+        protected Vector3Int[] positions;
+
         public Tilemap coll;
+        protected Tile[] collisionPositions;
         public Tile collisionTile;
-        
+
+
         public Tilemap obj;
+        protected Tile[] objectPositions; 
         public Tile arbreTile;
 
         public Tilemap waterMap;
@@ -45,7 +50,7 @@ namespace Assets.Tilemaps
         /// </summary>
         public void Initialize()
         {
-
+            
             coll.RefreshAllTiles();
             // Retrieve the Tilemap component from the same object this script is attached to
             _graphicMap = GetComponent<Tilemap>();
@@ -68,6 +73,7 @@ namespace Assets.Tilemaps
 
             // Render our data
             RenderAllTiles();
+            InvokeRepeating("RegenerateRessources", 30f, 50f);
         }
 
         /// <summary>
@@ -102,6 +108,7 @@ namespace Assets.Tilemaps
                     tilesArray[x * Width + y] = tile;
                 }
             }
+            positions = positionsArray;
             var tilesArray2 = new Tile[Width * Height];
             var tilesArray3 = new Tile[Width * Height];
             var tilesArrayWater = new Tile[Width * Height];
@@ -140,6 +147,8 @@ namespace Assets.Tilemaps
                     tilesArray2[i] = collisionTile;
                 }
             }
+            objectPositions = tilesArray3;
+            collisionPositions = tilesArray2;
             obj.SetTiles(positionsArray, tilesArray3);
             waterMap.SetTiles(positionsArray, tilesArrayWater);
             coll.SetTiles(positionsArray, tilesArray2);
@@ -229,6 +238,16 @@ namespace Assets.Tilemaps
         public void Generate(AlgorithmBase algorithm)
         {
             algorithm.Apply(this);
+        }
+
+
+        protected void RegenerateRessources()
+        {
+            obj.SetTiles(positions, objectPositions);
+            obj.RefreshAllTiles();
+
+            coll.SetTiles(positions, collisionPositions);
+            coll.RefreshAllTiles();
         }
     }
 }

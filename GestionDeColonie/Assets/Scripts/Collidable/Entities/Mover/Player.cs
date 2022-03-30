@@ -21,7 +21,7 @@ public class Player : Mover
     Vector2 lastClickedPos;
     bool moving;
     //public GameObject Stats;
-
+    public double tiredness; // from 0 to 1 : 0 dead / 1 amazing night
 
 
 

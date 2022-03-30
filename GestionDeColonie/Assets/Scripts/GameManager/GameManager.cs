@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         InvokeRepeating("spawn", 2, 20);
+        InvokeRepeating("TimeIsRunningNow", 200, 60);
     }
     private void Awake()
     {
@@ -86,6 +87,7 @@ public class GameManager : MonoBehaviour
     public int wood;
     public int cobble;
     public int iron;
+    public int food;
     /// etc..
     private int experience=5;
     public Slider experienceSlider;
@@ -173,6 +175,19 @@ public class GameManager : MonoBehaviour
             Instantiate(mobs[0], new Vector3(a, b, 0), Quaternion.identity);
             Instantiate(mobs[1], new Vector3(a, b, 0), Quaternion.identity);
             mobCount++;
+        }
+    }
+
+
+
+    protected void TimeIsRunningNow() // Update every matters when time is running. It can be like updating the food stock of the colony, updating the tiredness of the colons ...
+    {
+        int nbSettlers = settlers.Count;
+        food -= nbSettlers * 3;
+        for (int i =0; i <= settlers.Count; i++)
+        {
+            Player p = settlers[i].GetComponent<Player>();
+            p.tiredness *= 0.95;
         }
     }
 }
